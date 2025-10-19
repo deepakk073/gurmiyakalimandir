@@ -1,0 +1,1518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gurmiya Jagdamba Sthan - East Ward 6</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #ff6b35;
+            --secondary: #f7931e;
+            --accent: #c71f37;
+            --dark: #1a1a2e;
+            --light: #fff;
+            --bg-light: #fff5f0;
+            --gradient: linear-gradient(135deg, #ff6b35 0%, #f7931e 50%, #c71f37 100%);
+            --shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+            background: var(--light);
+        }
+
+        .hindi-text {
+            font-family: 'Noto Sans Devanagari', sans-serif;
+            line-height: 2;
+            font-size: 1.1rem;
+        }
+
+        /* Animated Background */
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.6; }
+            50% { opacity: 1; }
+        }
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .navbar.scrolled {
+            background: rgba(255, 255, 255, 0.98);
+            box-shadow: 0 4px 40px rgba(0,0,0,0.15);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-logo i {
+            font-size: 2rem;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: pulse 2s infinite;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: var(--primary);
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: var(--gradient);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 5px;
+        }
+
+        .bar {
+            width: 25px;
+            height: 3px;
+            background: var(--primary);
+            transition: all 0.3s ease;
+        }
+
+        /* Hero Section */
+        .home {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, #fff5f0 0%, #ffe5d9 50%, #fff5f0 100%);
+            padding-top: 80px;
+        }
+
+        .hero-bg {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 0;
+            overflow: hidden;
+        }
+
+        .hero-bg::before,
+        .hero-bg::after {
+            content: '';
+            position: absolute;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(255,107,53,0.15) 0%, transparent 70%);
+        }
+
+        .hero-bg::before {
+            width: 600px;
+            height: 600px;
+            top: -200px;
+            right: -100px;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .hero-bg::after {
+            width: 400px;
+            height: 400px;
+            bottom: -100px;
+            left: -100px;
+            animation: float 8s ease-in-out infinite reverse;
+        }
+
+        .home-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hero-text h1 {
+            font-family: 'Noto Sans Devanagari', sans-serif;
+            font-size: 4rem;
+            font-weight: 700;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 1rem;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .hero-text h2 {
+            font-size: 3rem;
+            color: var(--dark);
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .location {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .description {
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 1rem 2.5rem;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-block;
+            text-align: center;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: var(--gradient);
+            color: var(--light);
+            box-shadow: 0 10px 25px rgba(255,107,53,0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(255,107,53,0.4);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary);
+            color: var(--light);
+            transform: translateY(-3px);
+        }
+
+        .temple-image-container {
+            position: relative;
+            border-radius: 30px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+            background: var(--light);
+        }
+
+        .temple-image {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .image-placeholder {
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 4rem 2rem;
+            background: linear-gradient(135deg, #fff5f0 0%, #ffe5d9 100%);
+            min-height: 400px;
+        }
+
+        .image-placeholder i {
+            font-size: 6rem;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 1rem;
+        }
+
+        /* About Section */
+        .about {
+            padding: 6rem 2rem;
+            background: var(--light);
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            font-family: 'Noto Sans Devanagari', sans-serif;
+            color: var(--dark);
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .divider {
+            width: 100px;
+            height: 4px;
+            background: var(--gradient);
+            margin: 0 auto;
+            border-radius: 2px;
+        }
+
+        .about-content {
+            background: var(--bg-light);
+            border-radius: 30px;
+            padding: 3rem;
+            box-shadow: var(--shadow);
+        }
+
+        .temple-story {
+            margin-bottom: 3rem;
+        }
+
+        .temple-story p {
+            margin-bottom: 1.5rem;
+            text-align: justify;
+        }
+
+        .mantras-section {
+            margin: 3rem 0;
+            padding: 2rem;
+            background: linear-gradient(135deg, rgba(255,107,53,0.05) 0%, rgba(247,147,30,0.05) 100%);
+            border-radius: 20px;
+            border-left: 5px solid var(--primary);
+        }
+
+        .mantras-section h3 {
+            text-align: center;
+            font-family: 'Noto Sans Devanagari', sans-serif;
+            color: var(--accent);
+            margin-bottom: 2rem;
+            font-size: 1.8rem;
+        }
+
+        .mantra-box {
+            background: var(--light);
+            padding: 2rem;
+            margin-bottom: 1.5rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .mantra-box:hover {
+            transform: translateY(-5px);
+        }
+
+        .mantra {
+            font-family: 'Noto Sans Devanagari', sans-serif;
+            text-align: center;
+            font-size: 1.3rem;
+            line-height: 2.2;
+            color: var(--dark);
+            font-weight: 500;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .feature {
+            text-align: center;
+            padding: 2rem;
+            background: var(--light);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+
+        .feature:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+        }
+
+        .feature i {
+            font-size: 3rem;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 1rem;
+        }
+
+        .feature h3 {
+            color: var(--dark);
+            margin-bottom: 0.5rem;
+            font-size: 1.3rem;
+        }
+
+        /* Events Section */
+        .events {
+            padding: 6rem 2rem;
+            background: var(--bg-light);
+        }
+
+        .events-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        .event-card {
+            background: var(--light);
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: var(--shadow);
+            display: flex;
+            gap: 1.5rem;
+            transition: all 0.3s ease;
+            border-left: 5px solid var(--primary);
+        }
+
+        .event-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+
+        .event-date {
+            text-align: center;
+            min-width: 80px;
+        }
+
+        .event-date .day {
+            display: block;
+            font-size: 2.5rem;
+            font-weight: 700;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .event-date .month {
+            display: block;
+            font-size: 1rem;
+            color: #666;
+            font-weight: 600;
+        }
+
+        .event-info h3 {
+            color: var(--dark);
+            margin-bottom: 0.5rem;
+            font-size: 1.5rem;
+        }
+
+        .event-info p {
+            color: #666;
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+
+        .time {
+            display: inline-block;
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .time i {
+            margin-right: 0.5rem;
+        }
+
+        /* Gallery Section */
+        .gallery {
+            padding: 6rem 2rem;
+            background: var(--light);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .gallery-item {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+            height: 300px;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+        }
+
+        .placeholder-image {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #fff5f0 0%, #ffe5d9 100%);
+        }
+
+        .placeholder-image i {
+            font-size: 4rem;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 1rem;
+        }
+
+        .placeholder-image p {
+            color: var(--dark);
+            font-weight: 600;
+            font-size: 1.2rem;
+        }
+
+        /* Social Media Section */
+        .social-media {
+            padding: 6rem 2rem;
+            background: var(--bg-light);
+        }
+
+        .social-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .social-card {
+            background: var(--light);
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+        }
+
+        .social-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+
+        .social-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid var(--bg-light);
+        }
+
+        .social-icon {
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 15px;
+            font-size: 2rem;
+            color: var(--light);
+        }
+
+        .youtube-icon {
+            background: linear-gradient(135deg, #ff0000 0%, #cc0000 100%);
+        }
+
+        .facebook-icon {
+            background: linear-gradient(135deg, #1877f2 0%, #0c63d4 100%);
+        }
+
+        .whatsapp-icon {
+            background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+        }
+
+        .social-header h3 {
+            color: var(--dark);
+            font-size: 1.5rem;
+        }
+
+        .social-content p {
+            color: #666;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .social-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            color: var(--light);
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .youtube-btn {
+            background: linear-gradient(135deg, #ff0000 0%, #cc0000 100%);
+        }
+
+        .facebook-btn {
+            background: linear-gradient(135deg, #1877f2 0%, #0c63d4 100%);
+        }
+
+        .whatsapp-btn {
+            background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+        }
+
+        .social-btn:hover {
+            transform: translateX(5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        .video-preview {
+            margin-top: 1.5rem;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        /* Darshan Section */
+        .darshan {
+            padding: 6rem 2rem;
+            background: var(--light);
+        }
+
+        .darshan-schedule {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .schedule-card {
+            background: linear-gradient(135deg, var(--bg-light) 0%, var(--light) 100%);
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+            text-align: center;
+            transition: all 0.3s ease;
+            border-top: 5px solid var(--primary);
+        }
+
+        .schedule-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+
+        .schedule-card h3 {
+            color: var(--dark);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .timing {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            margin: 1.5rem 0;
+            font-size: 1.3rem;
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .timing i {
+            font-size: 2rem;
+        }
+
+        .special-timing {
+            text-align: center;
+            padding: 2rem;
+            background: var(--bg-light);
+            border-radius: 20px;
+            border: 2px dashed var(--primary);
+        }
+
+        .special-timing h3 {
+            color: var(--dark);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        /* Donation Section */
+        .donation {
+            padding: 6rem 2rem;
+            background: var(--bg-light);
+        }
+
+        .donation-content {
+            background: var(--light);
+            border-radius: 30px;
+            padding: 3rem;
+            box-shadow: var(--shadow);
+        }
+
+        .donation-text h3 {
+            color: var(--dark);
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .donation-text > p {
+            color: #666;
+            margin-bottom: 2rem;
+            line-height: 1.8;
+            font-size: 1.1rem;
+        }
+
+        .donation-methods {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .method {
+            text-align: center;
+            padding: 2rem;
+            background: var(--bg-light);
+            border-radius: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .method:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        .method i {
+            font-size: 3rem;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 1rem;
+        }
+
+        .method h4 {
+            color: var(--dark);
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 6rem 2rem;
+            background: var(--light);
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .info-item {
+            display: flex;
+            gap: 1.5rem;
+            padding: 1.5rem;
+            background: var(--bg-light);
+            border-radius: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .info-item:hover {
+            transform: translateX(10px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .info-item i {
+            font-size: 2rem;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            flex-shrink: 0;
+        }
+
+        .info-item h3 {
+            color: var(--dark);
+            margin-bottom: 0.5rem;
+            font-size: 1.3rem;
+        }
+
+        .info-item p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .google-location {
+            margin-top: 1rem;
+            padding: 1rem;
+            background: rgba(255,107,53,0.05);
+            border-radius: 10px;
+        }
+
+        .location-code {
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .map-container {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            position: relative;
+        }
+
+        .map-embed {
+            position: relative;
+        }
+
+        .map-overlay {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10;
+        }
+
+        .directions-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 2rem;
+            background: var(--gradient);
+            color: var(--light);
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            box-shadow: 0 10px 25px rgba(255,107,53,0.3);
+            transition: all 0.3s ease;
+        }
+
+        .directions-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(255,107,53,0.4);
+        }
+
+        /* Footer */
+        .footer {
+            background: linear-gradient(135deg, var(--dark) 0%, #0f0f1e 100%);
+            color: var(--light);
+            padding: 3rem 2rem 1rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3,
+        .footer-section h4 {
+            margin-bottom: 1rem;
+            color: var(--light);
+        }
+
+        .footer-section p {
+            color: rgba(255,255,255,0.7);
+            line-height: 1.6;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section ul li a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section ul li a:hover {
+            color: var(--primary);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-links a {
+            width: 45px;
+            height: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            color: var(--light);
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background: var(--gradient);
+            transform: translateY(-5px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: rgba(255,255,255,0.7);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+
+            .nav-menu {
+                position: fixed;
+                left: -100%;
+                top: 70px;
+                flex-direction: column;
+                background: rgba(255,255,255,0.98);
+                width: 100%;
+                text-align: center;
+                transition: 0.3s;
+                box-shadow: 0 10px 27px rgba(0,0,0,0.05);
+                padding: 2rem 0;
+            }
+
+            .nav-menu.active {
+                left: 0;
+            }
+
+            .hero-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .hero-text h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-text h2 {
+                font-size: 2rem;
+            }
+
+            .contact-content {
+                grid-template-columns: 1fr;
+            }
+
+            .social-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-om"></i>
+                <span>Gurmiya Jagdamba Sthan</span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="#home" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="#events" class="nav-link">Events</a></li>
+                <li class="nav-item"><a href="#gallery" class="nav-link">Gallery</a></li>
+                <li class="nav-item"><a href="#social-media" class="nav-link">Connect</a></li>
+                <li class="nav-item"><a href="#darshan" class="nav-link">Darshan</a></li>
+                <li class="nav-item"><a href="#donation" class="nav-link">Donation</a></li>
+                <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home" class="home">
+        <div class="home-content">
+            <div class="hero-container">
+                <div class="hero-text">
+                    <h1>॥ जय माता दी ॥</h1>
+                    <h2>Gurmiya Jagdamba Sthan</h2>
+                    <p class="location">East Ward - 6</p>
+                    <p class="description">A sacred place of devotion and spiritual peace</p>
+                    <div class="cta-buttons">
+                        <a href="#about" class="btn btn-primary">Learn More</a>
+                        <a href="#darshan" class="btn btn-secondary">Daily Darshan</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="temple-image-container">
+                        <img src="images/temple-main.png" alt="Gurmiya Jagdamba Sthan Temple" class="temple-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="image-placeholder">
+                            <i class="fas fa-temple"></i>
+                            <p>Temple Image</p>
+                            <small>Add your temple photo as 'temple-main.jpg' in the images folder</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-bg"></div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="mantras-section">
+                        <h3>🪔 माँ जगदम्बा मंत्र 🪔</h3>
+                        <div class="mantra-box">
+                            <p class="mantra">या देवी सर्वभूतेषु शक्ति रूपेण संस्थिता।<br>
+                            नमस्तस्यै नमस्तस्यै नमस्तस्यै नमो नमः॥</p>
+                        </div>
+                        <div class="mantra-box">
+                            <p class="mantra">सर्व मङ्गल माङ्गल्ये शिवे सर्वार्थ साधिके।<br>
+                            शरण्ये त्र्यंबके गौरी नारायणि नमोऽस्तुते॥</p>
+                        </div>
+                    </div>
+                    
+            <div class="section-header">
+                <h2>🌺 माँ जगदम्बा मंदिर – हमारे ग्राम की आस्था का प्रतीक 🌺</h2>
+                <div class="divider"></div>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <div class="temple-story">
+                        <p class="hindi-text">माँ जगदम्बा मंदिर का निर्माण वर्ष 1995 में किया गया था। इस पवित्र भूमि को श्री नागिना ठाकुर जी ने मंदिर निर्माण के लिए समर्पित किया। यह मंदिर गुर्मिया काली मंदिर से विभाजित होकर स्वतंत्र रूप से स्थापित किया गया।</p>
+                        
+                        <p class="hindi-text">मंदिर की नींव का पहला पत्थर स्वयं नागिना ठाकुर जी द्वारा रखा गया था। इसके बाद पूरे गाँव के लोगों ने मिलकर मंदिर निर्माण का बीड़ा उठाया। गाँव के हर व्यक्ति ने श्रमदान किया और आस-पास के स्थानों से 100 से अधिक ट्रैक्टर मिट्टी भरकर भूमि को समतल किया।</p>
+                        
+                        <p class="hindi-text">उसी समय हमारे गाँव में एक भीषण बाढ़ आई, जिससे सभी की जमीनें प्रभावित हुईं। लेकिन गाँव के लोगों की आस्था अडिग रही — उन्होंने अपनी भूमि मछुआरों को दे दी और जो धनराशि प्राप्त हुई, वह माँ जगदम्बा मंदिर के निर्माण में अर्पित कर दी। यह मंदिर आज हमारे गाँव की एकता, श्रद्धा और त्याग का जीवंत प्रतीक है।</p>
+                        
+                        <p class="hindi-text">माँ जगदम्बा की कृपा से आज यह स्थान भक्तों के लिए एक शक्ति पीठ के रूप में जाना जाता है, जहाँ प्रतिदिन आरती, भजन और उत्सवों की गूंज सुनाई देती है।</p>
+                    </div>
+                    
+                    
+                    <div class="features">
+                        <div class="feature">
+                            <i class="fas fa-pray"></i>
+                            <h3>Daily Prayers</h3>
+                            <p>Regular aarti and bhajan sessions</p>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-calendar-alt"></i>
+                            <h3>Festivals</h3>
+                            <p>Celebrating all major Hindu festivals</p>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-hands-helping"></i>
+                            <h3>Community Service</h3>
+                            <p>Serving the community through various initiatives</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Events Section -->
+    <section id="events" class="events">
+        <div class="container">
+            <div class="section-header">
+                <h2>Events & Festivals</h2>
+                <div class="divider"></div>
+            </div>
+            <div class="events-grid">
+                <div class="event-card">
+                    <div class="event-date">
+                        <span class="day">9</span>
+                        <span class="month">Oct</span>
+                    </div>
+                    <div class="event-info">
+                        <h3>Navratri Celebration</h3>
+                        <p>Nine days of devotion and celebration honoring Mata Durga</p>
+                        <span class="time"><i class="fas fa-clock"></i> 6:00 AM - 9:00 PM</span>
+                    </div>
+                </div>
+                <div class="event-card">
+                    <div class="event-date">
+                        <span class="day">24</span>
+                        <span class="month">Dec</span>
+                    </div>
+                    <div class="event-info">
+                        <h3>Christmas Special Prayer</h3>
+                        <p>Special prayers and community gathering</p>
+                        <span class="time"><i class="fas fa-clock"></i> 7:00 PM - 9:00 PM</span>
+                    </div>
+                </div>
+                <div class="event-card">
+                    <div class="event-date">
+                        <span class="day">1</span>
+                        <span class="month">Jan</span>
+                    </div>
+                    <div class="event-info">
+                        <h3>New Year Blessing</h3>
+                        <p>Special aarti and blessings for the new year</p>
+                        <span class="time"><i class="fas fa-clock"></i> 12:00 AM - 1:00 AM</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery">
+        <div class="container">
+            <div class="section-header">
+                <h2>Gallery</h2>
+                <div class="divider"></div>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <div class="placeholder-image">
+                        <i class="fas fa-temple"></i>
+                        <p>Temple Exterior</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="placeholder-image">
+                        <i class="fas fa-pray"></i>
+                        <p>Main Deity</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="placeholder-image">
+                        <i class="fas fa-fire"></i>
+                        <p>Aarti Ceremony</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="placeholder-image">
+                        <i class="fas fa-users"></i>
+                        <p>Festival Celebration</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="placeholder-image">
+                        <i class="fas fa-dharmachakra"></i>
+                        <p>Decoration</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="placeholder-image">
+                        <i class="fas fa-om"></i>
+                        <p>Prayer Hall</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Media Section -->
+    <section id="social-media" class="social-media">
+        <div class="container">
+            <div class="section-header">
+                <h2>Connect With Us</h2>
+                <div class="divider"></div>
+                <p style="margin-top: 1rem; color: #666; font-size: 1.1rem;">Stay connected with our temple community through social media</p>
+            </div>
+            <div class="social-grid">
+                <!-- YouTube Card -->
+                <div class="social-card">
+                    <div class="social-header">
+                        <div class="social-icon youtube-icon">
+                            <i class="fab fa-youtube"></i>
+                        </div>
+                        <div>
+                            <h3>YouTube Channel</h3>
+                            <p style="color: #666; margin: 0;">Watch our daily aarti and events</p>
+                        </div>
+                    </div>
+                    <div class="social-content">
+                        <p>Subscribe to our YouTube channel to watch live aarti, festival celebrations, bhajans, and spiritual discourses. Stay connected with divine blessings from the comfort of your home.</p>
+                        <a href="https://www.youtube.com/@your-channel-name" target="_blank" class="social-btn youtube-btn">
+                            <i class="fab fa-youtube"></i>
+                            Subscribe to Channel
+                        </a>
+                        <div class="video-preview" style="aspect-ratio: 16/9; background: linear-gradient(135deg, #ff0000 0%, #cc0000 100%); display: flex; align-items: center; justify-content: center; color: white;">
+                            <div style="text-align: center;">
+                                <i class="fab fa-youtube" style="font-size: 4rem; margin-bottom: 1rem;"></i>
+                                <p style="font-size: 1.2rem; font-weight: 600;">Latest Videos</p>
+                                <p style="font-size: 0.9rem; opacity: 0.9;">Subscribe to watch our content</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Facebook Card -->
+                <div class="social-card">
+                    <div class="social-header">
+                        <div class="social-icon facebook-icon">
+                            <i class="fab fa-facebook-f"></i>
+                        </div>
+                        <div>
+                            <h3>Facebook Page</h3>
+                            <p style="color: #666; margin: 0;">Join our community</p>
+                        </div>
+                    </div>
+                    <div class="social-content">
+                        <p>Follow our Facebook page for daily updates, event announcements, photo galleries, and to connect with our temple community. Share your experiences and stay informed about upcoming celebrations.</p>
+                        <a href="https://www.facebook.com/your-page-name" target="_blank" class="social-btn facebook-btn">
+                            <i class="fab fa-facebook-f"></i>
+                            Follow Our Page
+                        </a>
+                        <div class="video-preview" style="aspect-ratio: 16/9; background: linear-gradient(135deg, #1877f2 0%, #0c63d4 100%); display: flex; align-items: center; justify-content: center; color: white;">
+                            <div style="text-align: center;">
+                                <i class="fab fa-facebook-f" style="font-size: 4rem; margin-bottom: 1rem;"></i>
+                                <p style="font-size: 1.2rem; font-weight: 600;">Latest Updates</p>
+                                <p style="font-size: 0.9rem; opacity: 0.9;">Follow for daily posts</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- WhatsApp Card -->
+                <div class="social-card">
+                    <div class="social-header">
+                        <div class="social-icon whatsapp-icon">
+                            <i class="fab fa-whatsapp"></i>
+                        </div>
+                        <div>
+                            <h3>WhatsApp Group</h3>
+                            <p style="color: #666; margin: 0;">Join our temple community</p>
+                        </div>
+                    </div>
+                    <div class="social-content">
+                        <p>Join our WhatsApp group to receive instant updates about daily aarti timings, festival celebrations, special events, and community announcements. Connect with fellow devotees and stay updated with temple activities.</p>
+                        <a href="https://chat.whatsapp.com/IFb4HuvMZha9qHcOoG8AdQ?mode=wwc" target="_blank" class="social-btn whatsapp-btn">
+                            <i class="fab fa-whatsapp"></i>
+                            Join WhatsApp Group
+                        </a>
+                        <div class="video-preview" style="aspect-ratio: 16/9; background: linear-gradient(135deg, #25d366 0%, #128c7e 100%); display: flex; align-items: center; justify-content: center; color: white;">
+                            <div style="text-align: center;">
+                                <i class="fab fa-whatsapp" style="font-size: 4rem; margin-bottom: 1rem;"></i>
+                                <p style="font-size: 1.2rem; font-weight: 600;">Temple Community</p>
+                                <p style="font-size: 0.9rem; opacity: 0.9;">Join for instant updates</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Daily Darshan Section -->
+    <section id="darshan" class="darshan">
+        <div class="container">
+            <div class="section-header">
+                <h2>Daily Darshan Timings</h2>
+                <div class="divider"></div>
+            </div>
+            <div class="darshan-schedule">
+                <div class="schedule-card">
+                    <h3>Morning Darshan</h3>
+                    <div class="timing">
+                        <i class="fas fa-sun"></i>
+                        <span>6:00 AM - 12:00 PM</span>
+                    </div>
+                    <p>Morning prayers and aarti</p>
+                </div>
+                <div class="schedule-card">
+                    <h3>Evening Darshan</h3>
+                    <div class="timing">
+                        <i class="fas fa-moon"></i>
+                        <span>4:00 PM - 9:00 PM</span>
+                    </div>
+                    <p>Evening prayers and aarti</p>
+                </div>
+            </div>
+            <div class="special-timing">
+                <h3>Special Occasions</h3>
+                <p>Extended hours during festivals and special events</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Donation Section -->
+    <section id="donation" class="donation">
+        <div class="container">
+            <div class="section-header">
+                <h2>Donation Information</h2>
+                <div class="divider"></div>
+            </div>
+            <div class="donation-content">
+                <div class="donation-text">
+                    <h3>Support Our Temple</h3>
+                    <p>Your generous donations help us maintain the temple, organize festivals, and serve the community better.</p>
+                    <div class="donation-methods">
+                        <div class="method">
+                            <i class="fas fa-money-bill-wave"></i>
+                            <h4>Cash Donations</h4>
+                            <p>Donate directly at the temple</p>
+                        </div>
+                        <div class="method">
+                            <i class="fas fa-credit-card"></i>
+                            <h4>Online Transfer</h4>
+                            <p>Bank details available on request</p>
+                        </div>
+                        <div class="method">
+                            <i class="fas fa-mobile-alt"></i>
+                            <h4>Digital Payment</h4>
+                            <p>UPI and mobile wallet accepted</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2>Contact Us</h2>
+                <div class="divider"></div>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h3>Address</h3>
+                            <p>Gurmiya Jagdamba Sthan<br>East Ward - 6<br>Gurmiya, Bihar 844125</p>
+                            <div class="google-location">
+                                <strong>Google Maps Location:</strong><br>
+                                <span class="location-code">R68P+W23, Gurmiya, Bihar 844125</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h3>Phone</h3>
+                            <p>+91 XXXXXXXXXX</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <h3>Temple Hours</h3>
+                            <p>Morning: 6:00 AM - 12:00 PM<br>Evening: 4:00 PM - 9:00 PM</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fab fa-whatsapp"></i>
+                        <div>
+                            <h3>WhatsApp Group</h3>
+                            <p>Join our temple community group for instant updates</p>
+                            <a href="https://chat.whatsapp.com/YOUR_GROUP_INVITE_LINK" 
+                               target="_blank" 
+                               style="display: inline-flex; align-items: center; gap: 0.5rem; margin-top: 0.5rem; padding: 0.5rem 1rem; background: linear-gradient(135deg, #25d366 0%, #128c7e 100%); color: white; text-decoration: none; border-radius: 25px; font-weight: 600; transition: all 0.3s ease;">
+                                <i class="fab fa-whatsapp"></i>
+                                Join Group
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="map-container">
+                    <div class="map-embed">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3048.123456789!2d85.1234567!3d25.9876543!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sR68P%2BW23%2C%20Gurmiya%2C%20Bihar%20844125!5e0!3m2!1sen!2sin!4v1698765432!5m2!1sen!2sin" 
+                            width="100%" 
+                            height="450" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade"
+                            title="Gurmiya Jagdamba Sthan Location">
+                        </iframe>
+                        <div class="map-overlay">
+                            <a href="https://maps.google.com/?q=R68P+W23,Gurmiya,Bihar+844125" 
+                               target="_blank" 
+                               class="directions-btn">
+                                <i class="fas fa-directions"></i>
+                                Get Directions
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Gurmiya Jagdamba Sthan</h3>
+                    <p>A place of devotion, peace, and spiritual growth</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#events">Events</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect With Us</h4>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/your-page-name" target="_blank" title="Facebook">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a href="https://www.youtube.com/@your-channel-name" target="_blank" title="YouTube">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                        <a href="https://chat.whatsapp.com/YOUR_GROUP_INVITE_LINK" target="_blank" title="WhatsApp Group">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <a href="#" target="_blank" title="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" target="_blank" title="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Gurmiya Jagdamba Sthan. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        // Close menu when clicking on a link
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            });
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
